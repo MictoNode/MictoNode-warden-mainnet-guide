@@ -220,7 +220,7 @@ wardend comet show-validator
 Create validator.json
 
 ```bash
-nano /root/validator.json
+nano $HOME/validator.json
 ```
 
 ```json
@@ -242,7 +242,7 @@ nano /root/validator.json
 Send tx for create validator
 
 ```bash
-wardend tx staking create-validator /root/validator.json \
+wardend tx staking create-validator $HOME/validator.json \
     --from=wallet-name \
     --chain-id=warden_8765-1 \
     --gas auto --gas-adjustment 1.3 --fees 250000000000000award \
