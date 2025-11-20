@@ -2,11 +2,6 @@
 
 ![warden](https://raw.githubusercontent.com/MictoNode/warden-protocol/refs/heads/main/warden.png)
 
-1. **Alfama Testnet** - Completed ⏹
-2. **Buenavista Testnet** - Completed ⏹
-3. **Chiado Testnet** - Completed ⏹
-4. **Barra Testnet** - Currently Live ▶️
-
 #### **Status:** 🟢
 
 ## Endpoints
