@@ -4,7 +4,7 @@
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
+sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip zstd -y
 sudo apt install snapd -y
 sudo snap install just --classic
 ```
@@ -93,13 +93,13 @@ wardend init "change-moniker" --chain-id warden_8765-1
 ### ➡️ Genesis
 
 ```bash
-wget -O $HOME/.warden/config/genesis.json "https://files.mictonode.com/warden-mainnet/genesis/genesis.json"
+wget -O $HOME/.warden/config/genesis.json "https://files.mictonode.com/configs/warden-mainnet/genesis.json"
 ```
 
 ### ➡️ Addrbook
 
 ```bash
-wget -O $HOME/.warden/config/addrbook.json "https://files.mictonode.com/warden-mainnet/addrbook/addrbook.json"
+wget -O $HOME/.warden/config/addrbook.json "https://files.mictonode.com/configs/warden-mainnet/addrbook.json"
 ```
 
 ### ➡️ Gas Settings
@@ -167,19 +167,21 @@ cd $HOME
 
 Check snapshot height
 ```bash
-echo "Warden Mainnet Snapshot Height: $(curl -s https://files.mictonode.com/warden-mainnet/snapshot/block-height.txt)"
+echo "Warden Mainnet Snapshot Height: $(curl -s https://files.mictonode.com/snapshots/warden-mainnet/block-height.txt)"
 ```
 
 ```bash
 wardend comet unsafe-reset-all --home $HOME/.warden --keep-addr-book
 
-SNAPSHOT_URL="https://files.mictonode.com/warden-mainnet/snapshot/"
-LATEST_SNAPSHOT=$(curl -s $SNAPSHOT_URL | grep -oP 'warden-mainnet_\d+\.tar\.lz4' | sort -t_ -k2 -n | tail -n 1)
+SNAPSHOT_URL="https://files.mictonode.com/snapshots/warden-mainnet/"
+LATEST_SNAPSHOT=$(curl -s $SNAPSHOT_URL | grep -oP 'warden-mainnet_\d+\.tar\.zst' | sort -t_ -k2 -n | tail -n 1)
 
 if [ -n "$LATEST_SNAPSHOT" ]; then
   FULL_URL="${SNAPSHOT_URL}${LATEST_SNAPSHOT}"
+  
   if curl -s --head "$FULL_URL" | head -n 1 | grep "200" > /dev/null; then
-    curl "$FULL_URL" | lz4 -dc - | tar -xf - -C $HOME/.warden
+    echo "Downloading and extracting $LATEST_SNAPSHOT..."
+    curl "$FULL_URL" | zstd -dc - | tar -xf - -C $HOME/.warden
   else
     echo "Snapshot URL not accessible"
   fi
