@@ -1,7 +1,7 @@
 
-# ➡️ v7.0.2 Update
+# ➡️ v7.0.4 Update
 
-## BEFORE THE UPGRADE [BLOCK](https://explorer.mictonode.com/Warden-Mainnet/block/745500)
+## BEFORE THE UPGRADE [BLOCK](https://explorer.mictonode.com/Warden-Mainnet/block/3427000)
 
 ### Preparing for the Upgrade
 
@@ -9,35 +9,35 @@
 
 ```bash
 cd $HOME
-mkdir -p $HOME/.warden/cosmovisor/upgrades/v0.7.2/bin
-wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.7.3/wardend-v0.7.3-linux-amd64 -O $HOME/.warden/cosmovisor/upgrades/v0.7.2/bin/wardend
-chmod +x $HOME/.warden/cosmovisor/upgrades/v0.7.2/bin/wardend
+mkdir -p $HOME/.warden/cosmovisor/upgrades/v0.7.4/bin
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.7.4/wardend-v0.7.4-linux-amd64 -O $HOME/.warden/cosmovisor/upgrades/v0.7.4/bin/wardend
+chmod +x $HOME/.warden/cosmovisor/upgrades/v0.7.4/bin/wardend
 cd $HOME
 ```
 
 #### 2. Check Version
 
 ```bash
-$HOME/.warden/cosmovisor/upgrades/v0.7.2/bin/wardend version
+$HOME/.warden/cosmovisor/upgrades/v0.7.4/bin/wardend version
 ```
 
-## AFTER THE UPGRADE [BLOCK](https://explorer.mictonode.com/Warden-Mainnet/block/745500)
+## AFTER THE UPGRADE [BLOCK](https://explorer.mictonode.com/Warden-Mainnet/block/3427000)
 
 #### 1. Stop the Service and Download the Binary
 
 ```bash
 sudo systemctl stop wardend
 cd $HOME
-mkdir -p $HOME/.warden/cosmovisor/upgrades/v0.7.2/bin
-wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.7.3/wardend-v0.7.3-linux-amd64 -O $HOME/.warden/cosmovisor/upgrades/v0.7.2/bin/wardend
-chmod +x $HOME/.warden/cosmovisor/upgrades/v0.7.2/bin/wardend
+mkdir -p $HOME/.warden/cosmovisor/upgrades/v0.7.4/bin
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.7.4/wardend-v0.7.4-linux-amd64 -O $HOME/.warden/cosmovisor/upgrades/v0.7.4/bin/wardend
+chmod +x $HOME/.warden/cosmovisor/upgrades/v0.7.4/bin/wardend
 cd $HOME
 ```
 
 #### 2. Activate the New Version
 
 ```bash
-sudo ln -sfn $HOME/.warden/cosmovisor/upgrades/v0.7.2 $HOME/.warden/cosmovisor/current
+sudo ln -sfn $HOME/.warden/cosmovisor/upgrades/v0.7.4 $HOME/.warden/cosmovisor/current
 sudo ln -sfn $HOME/.warden/cosmovisor/current/bin/wardend /usr/local/bin/wardend
 ```
 
