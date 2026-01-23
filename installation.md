@@ -37,14 +37,14 @@ source $HOME/.bash_profile
 
 ```bash
 cd $HOME
-mkdir -p $HOME/.warden/cosmovisor/upgrades/v0.7.4/bin
-wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.7.4/wardend-v0.7.4-linux-amd64 -O $HOME/.warden/cosmovisor/upgrades/v0.7.4/bin/wardend
-chmod +x $HOME/.warden/cosmovisor/upgrades/v0.7.4/bin/wardend
+mkdir -p $HOME/.warden/cosmovisor/upgrades/v0.7.6/bin
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.7.6/wardend-v0.7.6-linux-amd64 -O $HOME/.warden/cosmovisor/upgrades/v0.7.6/bin/wardend
+chmod +x $HOME/.warden/cosmovisor/upgrades/v0.7.6/bin/wardend
 cd $HOME
 ```
 
 ```bash
-sudo ln -sfn $HOME/.warden/cosmovisor/upgrades/v0.7.4 $HOME/.warden/cosmovisor/current
+sudo ln -sfn $HOME/.warden/cosmovisor/upgrades/v0.7.6 $HOME/.warden/cosmovisor/current
 sudo ln -sfn $HOME/.warden/cosmovisor/current/bin/wardend /usr/local/bin/wardend
 ```
 
