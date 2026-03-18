@@ -1,7 +1,7 @@
 # 🍀 Fresh Peers
 
 ```bash
-URL="https://warden-mainnet-rpc.mictonode.com/net_info"
+URL="https://warden-mainnet-rpc.itrocket.net/net_info"
 ```
 
 ```bash

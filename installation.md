@@ -37,14 +37,14 @@ source $HOME/.bash_profile
 
 ```bash
 cd $HOME
-mkdir -p $HOME/.warden/cosmovisor/upgrades/v0.7.6/bin
-wget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.7.6/wardend-v0.7.6-linux-amd64 -O $HOME/.warden/cosmovisor/upgrades/v0.7.6/bin/wardend
-chmod +x $HOME/.warden/cosmovisor/upgrades/v0.7.6/bin/wardend
+mkdir -p $HOME/.warden/cosmovisor/upgrades/v1.0.0/bin
+wget https://github.com/warden-protocol/wardenprotocol/releases/download/v1.0.0/wardend-v1.0.0-linux-amd64 -O $HOME/.warden/cosmovisor/upgrades/v1.0.0/bin/wardend
+chmod +x $HOME/.warden/cosmovisor/upgrades/v1.0.0/bin/wardend
 cd $HOME
 ```
 
 ```bash
-sudo ln -sfn $HOME/.warden/cosmovisor/upgrades/v0.7.6 $HOME/.warden/cosmovisor/current
+sudo ln -sfn $HOME/.warden/cosmovisor/upgrades/v1.0.0 $HOME/.warden/cosmovisor/current
 sudo ln -sfn $HOME/.warden/cosmovisor/current/bin/wardend /usr/local/bin/wardend
 ```
 
@@ -93,13 +93,13 @@ wardend init "change-moniker" --chain-id warden_8765-1
 ### ➡️ Genesis
 
 ```bash
-wget -O $HOME/.warden/config/genesis.json "https://files.mictonode.com/configs/warden-mainnet/genesis.json"
+wget -O $HOME/.warden/config/genesis.json "https://server-2.itrocket.net/mainnet/warden/genesis.json"
 ```
 
 ### ➡️ Addrbook
 
 ```bash
-wget -O $HOME/.warden/config/addrbook.json "https://files.mictonode.com/configs/warden-mainnet/addrbook.json"
+wget -O $HOME/.warden/config/addrbook.json "https://server-2.itrocket.net/mainnet/warden/addrbook.json"
 ```
 
 ### ➡️ Gas Settings
@@ -163,7 +163,11 @@ sed -i.bak 's|^\s*create_empty_blocks\s*=.*|create_empty_blocks = true|' config.
 cd $HOME
 ```
 
-### ➡️ Starter Snap
+### ➡️ Starter Snap (Under Maintenance)
+
+> 🔧 This service is temporarily unavailable due to maintenance. Please use [ITRocket](https://itrocket.net/services/mainnet/warden/) as an alternative.
+
+---
 
 Check snapshot height
 ```bash

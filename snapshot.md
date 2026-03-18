@@ -1,4 +1,8 @@
-# ♻️ Snapshot
+# ♻️ Snapshot (Under Maintenance)
+
+> 🔧 This service is temporarily unavailable due to maintenance. Please use [ITRocket](https://itrocket.net/services/mainnet/warden/) as an alternative.
+
+---
 
 > **Info**  
 > Updated every 24 hours.  
